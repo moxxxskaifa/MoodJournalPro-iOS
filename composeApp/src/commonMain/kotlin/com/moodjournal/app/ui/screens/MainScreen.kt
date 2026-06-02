@@ -37,7 +37,7 @@ fun MainScreen() {
             // Today section
             Card(shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
                 Column(Modifier.padding(20.dp)) {
-                    Text(today, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(today, fontSize = 14.sp, color = MaterialTheme.colorScheme.onMaterialTheme.colorScheme.surfaceVariant)
                     Spacer(Modifier.height(12.dp))
                     Text("How are you feeling?", fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
                     Spacer(Modifier.height(12.dp))
@@ -46,7 +46,7 @@ fun MainScreen() {
                             Column(horizontalAlignment = Alignment.CenterHorizontally,
                                    modifier = Modifier.clickable { currentMood = emoji to label; haptic.light() }) {
                                 Text(emoji, fontSize = 32.sp)
-                                Text(label, fontSize = 11.sp, color = if (currentMood.first == emoji) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                                Text(label, fontSize = 11.sp, color = if (currentMood.first == emoji) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onMaterialTheme.colorScheme.surfaceVariant)
                             }
                         }
                     }
@@ -71,7 +71,7 @@ fun MainScreen() {
             Spacer(Modifier.height(8.dp))
             if (entries.isEmpty()) {
                 Spacer(Modifier.weight(1f))
-                Text("No entries yet. Start journaling!", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.align(Alignment.CenterHorizontally))
+                Text("No entries yet. Start journaling!", fontSize = 14.sp, color = MaterialTheme.colorScheme.onMaterialTheme.colorScheme.surfaceVariant, modifier = Modifier.align(Alignment.CenterHorizontally))
                 Spacer(Modifier.weight(1f))
             } else {
                 LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -83,7 +83,7 @@ fun MainScreen() {
                                 Column(Modifier.weight(1f)) {
                                     Text(entry.note, fontSize = 14.sp, fontWeight = FontWeight.Medium)
                                     Spacer(Modifier.height(4.dp))
-                                    Text("{entry.date} · {entry.mood}", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text("{entry.date} · {entry.mood}", fontSize = 11.sp, color = MaterialTheme.colorScheme.onMaterialTheme.colorScheme.surfaceVariant)
                                 }
                             }
                         }
