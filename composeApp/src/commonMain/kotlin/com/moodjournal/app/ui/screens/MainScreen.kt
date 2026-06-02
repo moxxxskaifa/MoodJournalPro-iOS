@@ -21,6 +21,7 @@ val moods = listOf("😊" to "Great", "🙂" to "Good", "😐" to "Okay", "😢"
 data class JournalEntry(val date: String, val mood: String, val emoji: String, val note: String)
 
 @Composable
+@OptIn(ExperimentalMaterial3Api::class)
 fun MainScreen() {
     var entries by remember { mutableStateOf(listOf<JournalEntry>()) }
     var currentMood by remember { mutableStateOf(moods[2]) }
